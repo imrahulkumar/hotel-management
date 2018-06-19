@@ -1,0 +1,64 @@
+
+
+
+<div class="main-wrapper login-wrapper login-main-wrapper align-items-center d-flex">
+  <div class="container"> 
+    <div class="row justify-content-center height-full align-items-center">
+      <div class="col-12 col-sm-11 col-md-8 col-lg-6 pad-side-extra py-4 nopad-sm">
+        <div class="transparent-white-bg">
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <div class="login-logo pb-3">
+                <img src="assets/img/logo.png" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <!-- login form -->
+          <div class="row">
+            <div class="col-12 margin-up-large pad-down pad-up">
+
+              <form class="form-own pad-side login-form pad-up pad-down" [formGroup]="rForm" (ngSubmit)="login(rForm)">
+                <div class="form-group">
+                  <label for="email">Email Id / Username</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+                  <div class="alert alert-own alert-danger" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
+                    <div *ngIf="rForm.controls['email'].errors.required"> email is required</div>
+                    <div *ngIf="rForm.controls['email'].errors.pattern"> enter correct email</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" maxlength="10" class="form-control" id="password" formControlName="password">
+                  <div class="alert alert-own alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+                    <div *ngIf="rForm.controls['password'].errors.required"> password is required</div>
+                    <div *ngIf="rForm.controls['password'].errors.minlength"> minimum length is 8</div>
+                    <div *ngIf="rForm.controls['password'].errors.maxlength"> maximum length is 10</div>
+                  </div>
+                </div>
+                <div class="form-row align-items-center">
+                  <div class="col">
+                    <div class=" form-check form-check-own text-select-none">
+                      <input type="checkbox" class="form-check-input" id="check1"  >
+                      <label class="form-check-label" for="check1">Remember me</label>
+                    </div>
+                  </div>
+                  <div class="col text-right">
+                    <button class="btn btn-green min-width-btn">Login</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row px-3 mt-3">
+            <!--<div class="col-7 pad-up text-dark-black font-big nopad-sm-right">
+              <span class="cursor px-2" [routerLink]="['forget-password']">Forgot Password?</span>
+            </div>-->
+            <div class="col-12 pad-up text-dark-black font-big text-right nopad-sm-left">
+              <span class="cursor px-2" [routerLink]="['/sign-up']">sign-up</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

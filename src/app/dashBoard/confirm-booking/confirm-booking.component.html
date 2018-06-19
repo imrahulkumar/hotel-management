@@ -1,0 +1,52 @@
+<div class="main-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="data-table col-12 nopad">
+                <div class="table-responsive col-12  nopad">
+                    <table class="table table-hover table-striped mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">User Email</th>
+                                <th scope="col">Adult</th>
+                                <th scope="col">checkin</th>
+                                <th scope="col">checkout</th>
+                                <th scope="col">children</th>
+                                <th scope="col">city</th>
+                                <th scope="col">ip</th>
+                                <th scope="col">region_name</th>
+                                <th scope="col">room</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">hotelName</th>
+                                <th scope="col">price</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngIf="dataJson != undefined">
+                                <tr>
+                                    <td scope="col">{{dataJson.email}}</td>
+                                    <td scope="col">{{dataJson.Adult}}</td>
+                                    <td scope="col">{{dataJson.checkin | date}}</td>
+                                    <td scope="col">{{dataJson.checkout | date}}</td>
+                                    <td scope="col">{{dataJson.children }}</td>
+                                    <td scope="col">{{dataJson.city}}</td>
+                                    <td scope="col">{{dataJson.ip}}</td>
+                                    <td scope="col">{{dataJson.region_name}}</td>
+                                    <td scope="col">{{dataJson.room}}</td>
+                                    <td scope="col">{{dataJson.Address }}</td>
+                                    <td scope="col">{{dataJson.hotelName}}</td>
+                                    <td scope="col">{{dataJson.price}}</td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <button  class="btn btn-own btn-green  pad-up" (click)="confirmBooked()" >
+							 Confirm Booked
+							</button>
+        </div>
+    </div>
+</div>

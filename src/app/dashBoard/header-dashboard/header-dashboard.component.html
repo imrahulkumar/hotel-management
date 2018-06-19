@@ -1,0 +1,22 @@
+<nav class="own-navbar d-none d-md-block" *ngIf="header">
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">Welcome Mithya Labs User</h4>
+      <span class="text-muted">USER: {{UserName}}</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+
+	<ul class="list-unstyled container-fluid nopad d-flex justify-content-end">
+
+		<li [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">DashBoard</li>
+		<li [routerLink]="['/authority']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" >Authority</li>
+		<li [routerLink]="['/login']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" >Login/Sign up</li>
+	</ul>
+</nav>

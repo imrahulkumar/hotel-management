@@ -1,0 +1,39 @@
+<ul *ngIf="message && message.type === 'success'" class="alert-msg list-unstyled list-inline">
+  <li class=""><i class="fa fa-check" aria-hidden="true"></i></li>
+  <li class="">
+      <p class="alert-heading">Confirmation</p>
+      <p>{{message.text}}</p>
+  </li>
+</ul>
+<ul *ngIf="message && message.type === 'error'" class="alert-msg-error list-unstyled list-inline">
+  <li> <img src="../../../assets/img/error-icon.png" class="img-of-error"></li>
+  <li class="">
+      <p class="alert-heading">Alert</p>
+      <p>{{message.text}}</p>
+  </li>
+</ul>
+<div *ngIf="message && message.type === 'modal'" id="alertModal" class="modal fade own-modal-wrapper" role="dialog">
+      <div class="modal-dialog">
+        <div id="own-modal">
+          <div class="modal-wrapper text-center">
+    
+            <img src="../../../assets/img/tick-icon.png">
+    
+            <h4>Thank You!</h4>
+    
+            <p class="text-uppercase">SUCCESSFUL</p>
+           
+            <p><small class="text-uppercase">{{ message.text }}</small></p>
+            <div class="option-btn-wrapper">
+    
+              <div class=" form-group form-own nopad">
+                <button class="form-control submit-btn" (click)="closeModal()">Done</button>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+</div>
+
+<!--<div *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">{{message.text}}</div>-->

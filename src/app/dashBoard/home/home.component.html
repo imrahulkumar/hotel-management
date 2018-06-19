@@ -1,0 +1,125 @@
+<div class="main-wrapper">
+	<div class="transparent-white-container">
+		<div class="container-fluid">
+			<div class="row no-margin">
+				<form [formGroup]="rForm" (ngSubmit)="hotel(rForm)">
+
+					<div class="col-12 bg-white row no-margin py-5 px-3 px-sm-2 px-md-0 form-own">
+						<div class="col-12 col-sm-6 col-lg-4 form-group px-0 px-sm-3 px-md-5">
+							<label>city*</label>
+							<input type="text" name="" class="form-control" class="form-control" formControlName="city">
+							<span class="alert alert-danger alert-own" *ngIf="!rForm.controls['city'].valid && rForm.controls['city'].touched">
+									<div *ngIf="rForm.controls['city'].errors.required"> city is required</div>
+									<div *ngIf="rForm.controls['city'].errors.pattern"> Enter valid city</div>
+								</span>
+						</div>
+
+
+
+						<div class="col-12 col-sm-6 col-lg-4 form-group px-0 px-sm-3 px-md-5">
+							<label>check in</label>
+							<input type="date" name="" class="form-control" formControlName="checkin">
+							<span class="alert alert-danger alert-own" *ngIf="!rForm.controls['checkin'].valid && rForm.controls['checkin'].touched">
+										<div *ngIf="rForm.controls['checkin'].errors.required">checkin is required</div>
+									</span>
+						</div>
+
+						<div class="col-12 col-sm-6 col-lg-4 form-group px-0 px-sm-3 px-md-5">
+							<label>check out</label>
+							<input type="date" name="" class="form-control" formControlName="checkout">
+							<span class="alert alert-danger alert-own" *ngIf="!rForm.controls['checkout'].valid && rForm.controls['checkout'].touched">
+										<div *ngIf="rForm.controls['checkout'].errors.required">checkout is required</div>
+									</span>
+						</div>
+
+
+						<div class="col-12 col-sm-6 col-lg-4 form-group px-0 px-sm-3 px-md-5">
+							<label>room</label>
+							<select class="form-control" formControlName="room">
+									<option  value="1">1</option>
+									<option  value="2">2</option>
+									<option  value="3">3</option>
+									<option  value="4">4</option>
+								</select>
+							<div class="alert alert-danger alert-own" *ngIf="!rForm.controls['room'].valid && rForm.controls['room'].touched">
+								<div *ngIf="rForm.controls['room'].errors.required"> Number of room is required</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-sm-6 col-lg-4 form-group px-0 px-sm-3 px-md-5">
+							<label>Adult</label>
+							<select class="form-control" formControlName="Adult">
+									<option  value="1">1</option>
+									<option  value="2">2</option>
+									<option  value="3">3</option>
+									<option  value="4">4</option>
+								</select>
+							<div class="alert alert-danger alert-own" *ngIf="!rForm.controls['Adult'].valid && rForm.controls['Adult'].touched">
+								<div *ngIf="rForm.controls['Adult'].errors.required"> Number of Adult is required</div>
+							</div>
+						</div>
+
+
+
+						<div class="col-12 col-sm-6 col-lg-4 form-group px-0 px-sm-3 px-md-5">
+							<label>children</label>
+							<select formControlName="children" class="form-control">
+									<option value="1">1 </option>
+									<option value="2">2</option>
+										<option  value="3">3</option>
+									<option  value="4">4</option>
+								</select>
+							<span class="alert alert-danger alert-own" *ngIf="!rForm.controls['children'].valid && rForm.controls['children'].touched">
+									<div *ngIf="rForm.controls['children'].errors.required">Number of children is required</div>
+								</span>
+						</div>
+
+						<div class="col-12 px-0 px-sm-3 px-md-5">
+							<button class="btn btn-own btn-green">
+								Search Hotel
+							</button>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+		<div class="data-table col-12 nopad">
+			<div class="table-responsive col-12  nopad">
+				<table *ngIf="hoteltableView" class="table table-hover table-striped mb-0">
+					<thead>
+						<tr>
+							<th scope="col">hotel Name </th>
+							<th scope="col">Address</th>
+							<th scope="col">price</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr *ngFor="let item of hotelListDisplay let i = index">
+							<td scope="col">{{item.hotelName}}</td>
+							<td scope="col">{{item.Address}}</td>
+							<td scope="col">{{item.price}}</td>
+
+							<td>
+								<div class="row no-gutters table-action">
+									<!--<div class="col text-center"><i class="fa fa-pencil cursor" aria-hidden="true" (click)='updateCandidate(i,item.Id)'></i></div>
+                                    <div class="col text-center"><i class="fa fa-trash-o cursor" aria-hidden="true" (click)='DeleteCandidate(i,item.Id)'></i></div>-->
+									<input type="radio" name="citizenship" (change)="checkBox($event,item)">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<button *ngIf="procedBooking" class="btn btn-own btn-green col-5 pad-up" (click)="procedBookingButton()" >
+								Proceed to Booking Hotel
+							</button>
+		</div>
+		<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+	</div>
+
+</div>

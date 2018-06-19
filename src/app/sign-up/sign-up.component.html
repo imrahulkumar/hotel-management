@@ -1,0 +1,52 @@
+<div class="main-wrapper">
+	<div class="transparent-white-container">
+		<div class="container-fluid">
+			<div class="row no-margin">
+				<form [formGroup]="rForm" (ngSubmit)="signup(rForm)" class="d-flex col-12 nopad justify-content-center">				
+					<div class="col-12 col-sm-6 bg-white row no-margin py-5 px-3 px-sm-2 px-md-0 form-own">
+					<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+
+<div class="form-group col-12">
+<label for="email">Email Id</label>
+<input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+<div class="alert alert-own alert-danger" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">
+<div *ngIf="rForm.controls['email'].errors.required"> email is required</div>
+<div *ngIf="rForm.controls['email'].errors.pattern"> enter valid email</div>
+</div>
+</div>
+
+<div class="form-group col-12">
+<label for="email">Phone</label>
+<input type="email" class="form-control" id="phone" aria-describedby="phoneHelp" formControlName="phone">
+<div class="alert alert-own alert-danger" *ngIf="!rForm.controls['phone'].valid && rForm.controls['phone'].touched">
+<div *ngIf="rForm.controls['phone'].errors.required"> phone is required</div>
+<div *ngIf="rForm.controls['phone'].errors.minlength"> minimum length must be 3</div>
+<div *ngIf="rForm.controls['phone'].errors.pattern"> enter valid phone number</div>
+</div>
+</div>
+
+<div class="form-group col-12">
+<label for="email">Password</label>
+<input type="email" class="form-control" id="password" aria-describedby="passwordHelp" formControlName="password">
+<div class="alert alert-own alert-danger" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+<div *ngIf="rForm.controls['password'].errors.required"> password is required</div> 
+<div *ngIf="rForm.controls['password'].errors.minlength"> minimum length must be 3</div>
+</div>
+</div>
+
+
+          
+          <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+						<div class="col-12 px-0 px-sm-3 px-md-5">
+							<button class="btn btn-own btn-green">
+								Submit
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

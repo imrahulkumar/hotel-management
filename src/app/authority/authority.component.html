@@ -1,0 +1,88 @@
+<div class="main-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="data-table col-12 nopad">
+            <div class="table-responsive col-12  nopad">
+              <h2>Successfull Booking User Information </h2>
+                <table class="table table-hover table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">email</th>
+                            <th scope="col">hotelName</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">checkin</th>
+                            <th scope="col">checkout</th>
+                            <th scope="col">Adult</th>
+                            <th scope="col">children</th>
+                            <th scope="col">city</th>
+                            <th scope="col">price</th>
+                            <th scope="col">room</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngIf="completedBooking != undefined">
+                        <tr *ngFor = "let item of completedBooking let i = index">
+                            <td scope="col">{{item.email}}</td>
+                            <td scope="col">{{item.hotelName}}</td>
+                            <td scope="col">{{item.Address}}</td>
+                            <td scope="col">{{item.checkin | date }}</td>
+                            <td scope="col">{{item.checkout | date}}</td>
+                            <td scope="col">{{item.Adult}}</td>
+                              <td scope="col">{{item.children}}</td>
+                            <td scope="col">{{item.city }}</td>
+                            <td scope="col">{{item.price}}</td>
+                            <td scope="col">{{item.room}}</td>
+                            <td>
+                               
+                            </td>
+                        </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+   <div class="table-responsive col-12  nopad">
+              <h2>Partial Booking User Information(Who did not complete the booking process) </h2>
+                <table class="table table-hover table-striped mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">ip</th>
+                            <th scope="col">region_name</th>
+                            <th scope="col">checkin</th>        
+                            <th scope="col">checkout</th>
+                            <th scope="col">Adult</th>
+                            <th scope="col">children</th>
+                            <th scope="col">city</th>                        
+                            <th scope="col">room</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngIf="partialBooking != undefined">
+                        <tr *ngFor = "let item of partialBooking let i = index">
+                            <td scope="col">{{item.ip}}</td>
+                            <td scope="col">{{item.region_name}}</td>
+                            <td scope="col">{{item.checkin | date}}</td>                          
+                            <td scope="col">{{item.checkout | date}}</td>
+                            <td scope="col">{{item.Adult}}</td>
+                              <td scope="col">{{item.children}}</td>
+                            <td scope="col">{{item.city }}</td>                      
+                            <td scope="col">{{item.room}}</td>
+                            <td>                               
+                            </td>
+                        </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+      
+    </div>
+</div>
+</div>
+
