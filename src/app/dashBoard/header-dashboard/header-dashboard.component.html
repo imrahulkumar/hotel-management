@@ -17,6 +17,7 @@
 
 		<li [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">DashBoard</li>
 		<li [routerLink]="['/authority']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" >Authority</li>
-		<li [routerLink]="['/login']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" >Login/Sign up</li>
+    <li [routerLink]="['/login']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" >Login/Sign up</li>
+    <li  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" (click)="logout()" >Log-Out</li>
 	</ul>
 </nav>

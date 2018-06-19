@@ -22,8 +22,7 @@ export class HeaderDashboardComponent {
           this.header = true;
           console.log("true");
           let auth_dat = localStorage.getItem("auth");
-          if (auth_dat != null || auth_dat != "undefined") {
-            console.log("araye dewanao", JSON.parse(auth_dat));
+          if (auth_dat != null || auth_dat != undefined) {
             this.UserName = JSON.parse(auth_dat).email;
           }
         } else {
@@ -31,5 +30,10 @@ export class HeaderDashboardComponent {
         }
       }
     });
+  }
+  logout() {
+
+    localStorage.clear();
+
   }
 }

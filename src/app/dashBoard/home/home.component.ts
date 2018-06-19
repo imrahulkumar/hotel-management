@@ -78,17 +78,23 @@ export class HomeComponent implements OnInit {
   }
 
   //moving to next page
-  procedBookingButton() {
-    debugger;
-    var this2 = this;
+  procedBookingButton() {   
     let auth_dat = localStorage.getItem("auth");
     if (auth_dat === null || auth_dat == "undefined") {
       this.alert.error("to proceed further login please", true);
-      setTimeout(function() {
+      debugger
+      // setTimeout(function() {
+        
+      // }, 300);
+
+      setTimeout(()=>{    //<<<---    using ()=> syntax
         this.router.navigate(["/login"]);
-      }, 3000);
+   }, 3000);
+
+
     } else {
       this.router.navigate(["/confirm-booking"]);
+      
     }
   }
 

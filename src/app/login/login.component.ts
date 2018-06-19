@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
       }
       else if(data.UserType =="admin") {
 this.router.navigate(["/authority"]);
+
       }
       else
       {
