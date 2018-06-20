@@ -6,6 +6,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Login Authentication
+
+For the User:
+     Email: rahul@gmail.com, password: rahul
+     Email: mohit@gmail.com, password: mohit
+     Email: rohit@gmail.com, password: rohit
+
+ For the Admin:
+     Email: admin@gmail.com, password: admin
+     Email: hotel@gmail.com, password: rahul
+     Email: auth@gmail.com , password: rahul
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
