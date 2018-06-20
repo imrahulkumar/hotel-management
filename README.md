@@ -8,15 +8,15 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Login Authentication
 
-For the User:
-     Email: rahul@gmail.com, password: rahul
-     Email: mohit@gmail.com, password: mohit
-     Email: rohit@gmail.com, password: rohit
+For the User: <br />
+     Email: rahul@gmail.com, password: rahul <br />
+     Email: mohit@gmail.com, password: mohit <br />
+     Email: rohit@gmail.com, password: rohit <br />
 
- For the Admin:
-     Email: admin@gmail.com, password: admin
-     Email: hotel@gmail.com, password: rahul
-     Email: auth@gmail.com , password: rahul
+ For the Admin:<br />
+     Email: admin@gmail.com, password: admin<br />
+     Email: hotel@gmail.com, password: rahul<br />
+     Email: auth@gmail.com , password: rahul<br />
 
 ## Code scaffolding
 
