@@ -32,8 +32,7 @@ export class HeaderDashboardComponent {
     });
   }
   logout() {
-
     localStorage.clear();
-
+    window.location.reload();
   }
 }

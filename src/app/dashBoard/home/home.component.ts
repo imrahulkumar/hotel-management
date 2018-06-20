@@ -68,33 +68,31 @@ export class HomeComponent implements OnInit {
   }
 
   //check box on change listener
-  checkBox(e,item) {
+  checkBox(e, item) {
     if (e.target.checked) {
       this.procedBooking = true;
       this.data.changeMessageHotel(item);
-      debugger
+      debugger;
     } else {
     }
   }
 
   //moving to next page
-  procedBookingButton() {   
+  procedBookingButton() {
     let auth_dat = localStorage.getItem("auth");
     if (auth_dat === null || auth_dat == "undefined") {
       this.alert.error("to proceed further login please", true);
-      debugger
+      debugger;
       // setTimeout(function() {
-        
+
       // }, 300);
 
-      setTimeout(()=>{    //<<<---    using ()=> syntax
+      setTimeout(() => {
+        //<<<---    using ()=> syntax
         this.router.navigate(["/login"]);
-   }, 3000);
-
-
+      }, 3000);
     } else {
       this.router.navigate(["/confirm-booking"]);
-      
     }
   }
 
@@ -105,6 +103,21 @@ export class HomeComponent implements OnInit {
         console.log("systemIP", this.systemIp);
       },
       error => {
+        var data = {
+          city: "Gurgaon",
+          country_code: "IN",
+          country_name: "India",
+          ip: "125.63.74.98",
+          latitude: 28.4667,
+          longitude: 77.0333,
+          metro_code: 0,
+          region_code: "HR",
+          region_name: "Haryana",
+          time_zone: "Asia/Kolkata",
+          zip_code: "122001"
+        };
+        this.systemIp = data;
+
         this.alert.error("IP Data Not Fetched", true);
       }
     );
